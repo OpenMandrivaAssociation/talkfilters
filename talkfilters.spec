@@ -1,6 +1,6 @@
 %define name talkfilters
 %define version 2.3.7
-%define release %mkrel 1
+%define release %mkrel 2
 %define major 1
 %define libname %mklibname %name %major
 %define libnamedev %mklibname -d %name
@@ -10,10 +10,12 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{name}-%{version}.tar.bz2
+Patch: talkfilters-2.3.7-info-dir.patch
 License: GPL
 Group: Toys
 Url: http://www.hyperrealm.com/talkfilters/talkfilters.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires: texinfo
 
 %description
 The GNU Talk Filters are filter programs that convert ordinary English
@@ -64,6 +66,7 @@ other programs.
 
 %prep
 %setup -q
+%patch -p1 -b .info-dir
 
 %build
 %configure2_5x
