@@ -1,6 +1,6 @@
 %define name talkfilters
 %define version 2.3.7
-%define release %mkrel 2
+%define release %mkrel 3
 %define major 1
 %define libname %mklibname %name %major
 %define libnamedev %mklibname -d %name
@@ -48,6 +48,7 @@ other programs.
 Summary: GNU Talk filters shared library
 Group: Development/C
 Requires: %libname = %version-%release
+Provides: %name-devel = %version-%release
 Requires(post): info-install
 Requires(preun): info-install
 
