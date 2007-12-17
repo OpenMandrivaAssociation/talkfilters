@@ -14,7 +14,6 @@ Patch: talkfilters-2.3.7-info-dir.patch
 License: GPL
 Group: Toys
 Url: http://www.hyperrealm.com/talkfilters/talkfilters.html
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: texinfo
 
 %description
