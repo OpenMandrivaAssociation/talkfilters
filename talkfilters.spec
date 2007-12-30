@@ -1,6 +1,6 @@
 %define name talkfilters
-%define version 2.3.7
-%define release %mkrel 3
+%define version 2.3.8
+%define release %mkrel 1
 %define major 1
 %define libname %mklibname %name %major
 %define libnamedev %mklibname -d %name
@@ -9,7 +9,7 @@ Summary: GNU Talk filters
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}-%{version}.tar.bz2
+Source0: %{name}-%{version}.tar.gz
 Patch: talkfilters-2.3.7-info-dir.patch
 License: GPL
 Group: Toys
