@@ -1,6 +1,6 @@
 %define name talkfilters
 %define version 2.3.8
-%define release %mkrel 1
+%define release %mkrel 3
 %define major 1
 %define libname %mklibname %name %major
 %define libnamedev %mklibname -d %name
