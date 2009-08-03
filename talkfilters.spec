@@ -1,6 +1,6 @@
 %define name talkfilters
 %define version 2.3.8
-%define release %mkrel 4
+%define release %mkrel 5
 %define major 1
 %define libname %mklibname %name %major
 %define libnamedev %mklibname -d %name
@@ -11,7 +11,8 @@ Version: %{version}
 Release: %{release}
 Source0: %{name}-%{version}.tar.gz
 Patch: talkfilters-2.3.7-info-dir.patch
-License: GPL
+Patch1: talkfilters-2.3.8-format-strings.patch
+License: GPLv2+
 Group: Toys
 Url: http://www.hyperrealm.com/talkfilters/talkfilters.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -68,6 +69,7 @@ other programs.
 %prep
 %setup -q
 %patch -p1 -b .info-dir
+%patch1 -p1
 
 %build
 %configure2_5x
