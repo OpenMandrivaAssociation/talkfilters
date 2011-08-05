@@ -17,6 +17,7 @@ Group: Toys
 Url: http://www.hyperrealm.com/talkfilters/talkfilters.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: texinfo
+BuildRequires: flex
 
 %description
 The GNU Talk Filters are filter programs that convert ordinary English
