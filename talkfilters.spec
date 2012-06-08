@@ -1,23 +1,19 @@
-%define name talkfilters
-%define version 2.3.8
-%define release %mkrel 6
 %define major 1
-%define libname %mklibname %name %major
-%define libnamedev %mklibname -d %name
+%define libname %mklibname %{name} %{major}
+%define libnamedev %mklibname -d %{name}
 
-Summary: GNU Talk filters
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{name}-%{version}.tar.gz
-Patch: talkfilters-2.3.7-info-dir.patch
-Patch1: talkfilters-2.3.8-format-strings.patch
-License: GPLv2+
-Group: Toys
-Url: http://www.hyperrealm.com/talkfilters/talkfilters.html
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: texinfo
-BuildRequires: flex
+Summary:	GNU Talk filters
+Name:		talkfilters
+Version:	2.3.8
+Release:	7
+Source0:	%{name}-%{version}.tar.gz
+Patch:		talkfilters-2.3.7-info-dir.patch
+Patch1:		talkfilters-2.3.8-format-strings.patch
+License:	GPLv2+
+Group:		Toys
+Url:		http://www.hyperrealm.com/talkfilters/talkfilters.html
+BuildRequires:	texinfo
+BuildRequires:	flex
 
 %description
 The GNU Talk Filters are filter programs that convert ordinary English
@@ -31,10 +27,11 @@ standard input and writes to standard output. The package also
 provides the filters as a C library, so they can be easily used by
 other programs.
 
-%package -n %libname
-Summary: GNU Talk filters shared library
-Group: System/Libraries
-%description -n %libname
+%package -n %{libname}
+Summary:	GNU Talk filters shared library
+Group:		System/Libraries
+
+%description -n %{libname}
 The GNU Talk Filters are filter programs that convert ordinary English
 text into text that mimics a stereotyped or otherwise humorous
 dialect. These filters have been in the public domain for many years,
@@ -46,15 +43,13 @@ standard input and writes to standard output. The package also
 provides the filters as a C library, so they can be easily used by
 other programs.
 
-%package -n %libnamedev
-Summary: GNU Talk filters shared library
-Group: Development/C
-Requires: %libname = %version-%release
-Provides: %name-devel = %version-%release
-Requires(post): info-install
-Requires(preun): info-install
+%package -n %{libnamedev}
+Summary:	GNU Talk filters shared library
+Group:		Development/C
+Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
 
-%description -n %libnamedev
+%description -n %{libnamedev}
 The GNU Talk Filters are filter programs that convert ordinary English
 text into text that mimics a stereotyped or otherwise humorous
 dialect. These filters have been in the public domain for many years,
@@ -65,7 +60,6 @@ postmodern, redneck, valspeak, and warez. Each program reads from
 standard input and writes to standard output. The package also
 provides the filters as a C library, so they can be easily used by
 other programs.
-
 
 %prep
 %setup -q
@@ -77,40 +71,21 @@ other programs.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post -n %libname -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libname -p /sbin/ldconfig
-%endif
-%post -n %libnamedev
-%_install_info %{name}.info
-%preun -n %libnamedev
-%_remove_install_info %{name}.info
-
-
 %files
-%defattr(-,root,root)
 %doc README AUTHORS
-%_bindir/*
-%_mandir/man1/*
+%{_bindir}/*
+%{_mandir}/man1/*
 
-%files -n %libname
-%defattr(-,root,root)
-%_libdir/libtalkfilters.so.%{major}*
+%files -n %{libname}
+%{_libdir}/libtalkfilters.so.%{major}*
 
-%files -n %libnamedev
-%defattr(-,root,root)
+%files -n %{libnamedev}
 %doc ChangeLog
-%_libdir/libtalkfilters.so
-%_libdir/libtalkfilters.a
-%_libdir/libtalkfilters.la
-%_libdir/pkgconfig/*
-%_includedir/*
-%_infodir/talkfilters.info*
+%{_libdir}/libtalkfilters.so
+%{_libdir}/libtalkfilters.a
+%{_libdir}/pkgconfig/*
+%{_includedir}/*
+%{_infodir}/talkfilters.info*
