@@ -1,0 +1,18 @@
+--- talkfilters-2.3.7/talkfilters.texi~	2005-06-27 06:59:03.000000000 +0200
++++ talkfilters-2.3.7/talkfilters.texi	2007-07-20 13:39:16.000000000 +0200
+@@ -12,6 +12,15 @@
+ 
+ @comment %**end of header
+ 
++@ifinfo
++@format
++START-INFO-DIR-ENTRY
++* talkfilters: (talkfilters).       GNU Talk Filters.
++END-INFO-DIR-ENTRY
++@end format
++@end ifinfo
++
++
+ @tex
+ \global\emergencystretch = .3\hsize
+ @end tex
