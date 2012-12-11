@@ -89,3 +89,57 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/*
 %{_includedir}/*
 %{_infodir}/talkfilters.info*
+
+
+%changelog
+* Fri Jun 08 2012 Andrey Bondrov <abondrov@mandriva.org> 2.3.8-7
++ Revision: 803281
+- Drop some legacy junk
+
+* Fri Aug 05 2011 Götz Waschk <waschk@mandriva.org> 2.3.8-6
++ Revision: 693304
+- update build deps
+- rebuild
+
+* Mon Aug 03 2009 Götz Waschk <waschk@mandriva.org> 2.3.8-5mdv2011.0
++ Revision: 407700
+- update license
+- fix format strings
+
+* Sat Aug 02 2008 Thierry Vignaud <tv@mandriva.org> 2.3.8-4mdv2009.0
++ Revision: 261372
+- rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 2.3.8-3mdv2009.0
++ Revision: 254109
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Sun Dec 30 2007 Götz Waschk <waschk@mandriva.org> 2.3.8-1mdv2008.1
++ Revision: 139618
+- new version
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Fri Jul 20 2007 Götz Waschk <waschk@mandriva.org> 2.3.7-3mdv2008.0
++ Revision: 53859
+- fix devel provides
+
+* Fri Jul 20 2007 Götz Waschk <waschk@mandriva.org> 2.3.7-2mdv2008.0
++ Revision: 53858
+- add proper info dir entry
+
+* Fri Jul 20 2007 Götz Waschk <waschk@mandriva.org> 2.3.7-1mdv2008.0
++ Revision: 53804
+- Import talkfilters
+
+
+
+* Fri Jul 20 2007 Götz Waschk <waschk@mandriva.org> 2.3.7-1mdv2008.0
+- initial package
