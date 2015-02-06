@@ -5,7 +5,7 @@
 Summary:	GNU Talk filters
 Name:		talkfilters
 Version:	2.3.8
-Release:	7
+Release:	8
 Source0:	%{name}-%{version}.tar.gz
 Patch:		talkfilters-2.3.7-info-dir.patch
 Patch1:		talkfilters-2.3.8-format-strings.patch
