@@ -11,7 +11,7 @@ Patch:		talkfilters-2.3.7-info-dir.patch
 Patch1:		talkfilters-2.3.8-format-strings.patch
 License:	GPLv2+
 Group:		Toys
-Url:		http://www.hyperrealm.com/talkfilters/talkfilters.html
+Url:		https://www.hyperrealm.com/talkfilters/talkfilters.html
 BuildRequires:	texinfo
 BuildRequires:	flex
 
