@@ -12,6 +12,11 @@ Patch1:		talkfilters-2.3.8-format-strings.patch
 License:	GPLv2+
 Group:		Toys
 Url:		https://www.hyperrealm.com/talkfilters/talkfilters.html
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	texinfo
 BuildRequires:	flex
 
